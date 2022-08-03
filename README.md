@@ -10,7 +10,7 @@ common pitfalls of Lua, such as variable scoping issues, operator precedence amb
 
 ## Installation
 First, you have to have Packer installed for managing plugins. You can find installation instructions from [the github page](https://github.com/wbthomason/packer.nvim).  
-Once you have that, you can clone this repository somewhere into your runtimepath and run `make`.  
+Once you have that, you can clone this repository somewhere into your runtimepath (`~/.nvim` or `~/.config/nvim` etc) and run `make`.  
 
 After that, before launching Neovim, you should run:  
 ```nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -c 'PackerCompile'```
