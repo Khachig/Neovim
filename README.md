@@ -9,7 +9,7 @@ Since it runs on Lua, it's basically a different notation to write the same thin
 common pitfalls of Lua, such as variable scoping issues, operator precedence ambiguity, lack of arity checks for function arguments, etc..  
 
 ## Installation
-First, you'd have to have Packer installed for managing plugins. You can find installation instructions from [the github page](https://github.com/wbthomason/packer.nvim).  
+First, you have to have Packer installed for managing plugins. You can find installation instructions from [the github page](https://github.com/wbthomason/packer.nvim).  
 Once you have that, you can clone this repository somewhere into your runtimepath and run `make`.  
 
 After that, before launching Neovim, you should run:  
