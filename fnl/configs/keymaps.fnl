@@ -56,6 +56,8 @@
       :q [":q<CR>" "Quick Quit"]
       :Q [":q!<CR>" "Force quit"]
 
+      :W [":Writer<CR>" "Toggle Writer Mode"]
+
       :n [":Neotree toggle<CR>" "Toggle Neotree"]
       :o [":Neotree focus<CR>" "Focus Neotree"]
 

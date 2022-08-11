@@ -19,6 +19,7 @@
                   :configs.telescope
                   :configs.toggleterm
                   :configs.treesitter
+                  :configs.user-commands
                   :configs.web-devicons
                   :configs.window-picker])]
  (let [(status-ok? err-msg) (pcall require source)]
