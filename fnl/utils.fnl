@@ -5,5 +5,11 @@
       (do
        (pack.setup (or ?options {}))
        (. [pack] 1)))))
+
+(fn safe-require [name]
+  (let [(status-ok? pack) (pcall require name)]
+    (if (not status-ok?)
+      (vim.notify (.. name " not found") "error")
+      pack)))
         
-{:create-conf create-conf}
+{: create-conf : safe-require}

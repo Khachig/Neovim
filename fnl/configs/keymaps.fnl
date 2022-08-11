@@ -32,6 +32,10 @@
        ["<S-h>" ":bprevious<CR>"]
        ["<S-l>" ":bnext<CR>"]
 
+       ;; Toggleterm
+       ["<leader>tv" ":ToggleTermSendVisualSelection<CR>" "v"]
+       ["<leader>tV" ":ToggleTermSendVisualLines<CR>" "v"]
+
        ;; Resize with arrow keys
        ["<C-Up>" ":resize -2<CR>"]
        ["<C-Down>" ":resize +2<CR>"]
@@ -41,7 +45,11 @@
 
 (let [{: create-conf} (require :utils)]
   ((. (create-conf :which-key) :register)
-   {
+   {"<C-[>"
+     {:name "+REPL"
+      :f [":vs<CR>:vertical resize 50<CR>:term<CR>afennel<CR><C-\\><C-n><C-w>h" "Fennel"]
+      :c [":vs<CR>:vertical resize 50<CR>:term<CR>aswank<CR><C-\\><C-n><C-w>h" "Common Lisp"]
+      :p [":vs<CR>:vertical resize 50<CR>:term<CR>aipython<CR><C-\\><C-n><C-w>h" "Python"]}
     :<leader>
      {
       :w [":w<CR>" "Quick Save"]
@@ -59,8 +67,24 @@
 
       :c {:name "+NerdComment"}
 
+      :t {:name "+ToggleTerm"
+          :l [":ToggleTermSendCurrentLine<CR>" "Send Current Line"]}
+          ;:v [":ToggleTermSendVisualSelection<CR>" "Send Visual Selection"]
+          ;:V [":ToggleTermSendVisualLines<CR>" "Send Visual Lines"]}
+
+      :l {:name "+LSP"
+          :D {:name "Goto declaration"}
+          :d {:name "Goto definition"}
+          :i {:name "Goto implementation"}
+          :h {:name "Hover signature"}
+          :s {:name "Signature help"}
+          :t {:name "Type definition"}
+          :a {:name "Perform code action"}
+          :r {:name "Show references"}
+          :c [":!ctags -R ." "Run ctags"]}
       :s {
           :name "+Search"
+          :F [":Telescope file_browser<CR>" "File Browser"]
           :f [":Telescope find_files<CR>" "Find File"]
           :r [":Telescope oldfiles<CR>" "Find Recent"]
           :g [":Telescope live_grep<CR>" "Live Grep"]
@@ -70,7 +94,10 @@
        
       :e {
            :name "+Eval"
+           :b [":ConjureEvalBuf<CR>" "Eval Buffer"]
            :r [":ConjureEvalRootForm<CR>" "Eval Root Form"]
            :R [":ConjureEvalReplaceForm<CR>" "Eval Replace Form"]
            :e [":ConjureEvalCurrentForm<CR>" "Eval Current Form"]
-           :v [":ConjureEvalVisual<CR>" "Eval Visual Selection"]}}}))
+           :v [":ConjureEvalVisual<CR>" "Eval Visual Selection"]
+           :w [":ConjureEvalWord<CR>" "Eval Word"]
+           :m [":ConjureEvalMarkedForm<CR>" "Eval Marked Form"]}}}))

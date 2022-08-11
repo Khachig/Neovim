@@ -6,11 +6,17 @@
                  [
                   :configs.autopairs
                   :configs.bufferline
+                  :configs.cmp
                   :configs.colorscheme
                   :configs.keymaps
                   :configs.lightspeed
+                  :configs.lsp
+                  :configs.lsp-installer
                   :configs.lualine
+                  :configs.luasnip
+                  :configs.neo-tree
                   :configs.notify
+                  :configs.telescope
                   :configs.toggleterm
                   :configs.treesitter
                   :configs.web-devicons
