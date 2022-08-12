@@ -65,7 +65,7 @@
 
         ;; Interactive development for Lisp
         (use "Olical/Conjure")
-        ;(use "Olical/aniseed")
+        (use "Olical/aniseed")
         ;; Cmp source for Conjure
         (use "PaterJason/cmp-conjure")
 

@@ -1,37 +1,34 @@
-(let [options
-       {
-        :swapfile false
-        :showcmd true
-        :cmdheight 1
-        :clipboard "unnamedplus"
-        :laststatus 3 ; status line spans entire bottom
+(import-macros {: set!} :macros)
 
-        ;; Tab options
-        :expandtab true
-        :smarttab true
-        :shiftwidth 4
-        :tabstop 4
+(set! noswapfile)
+(set! showcmd)
+(set! cmdheight 1)
+(set! clipboard :unnamedplus)
+(set! laststatus 3)
 
-        ;; Search options
-        :hlsearch true
-        :incsearch true
-        :ignorecase true
-        :smartcase true
+;; Tab Key Options
+(set! expandtab)
+(set! smarttab)
+(set! shiftwidth 4)
+(set! tabstop 4)
 
-        ;; Editor options
-        :wrap false
-        :scrolloff 10
-        :fileencoding "utf-8"
-        :termguicolors true
-        :showmatch true
-        :showmode false
-        :relativenumber true
-        :number true
-        :splitright true
-        :splitbelow true
+;; Search Options
+(set! hlsearch)
+(set! incsearch)
+(set! ignorecase)
+(set! smartcase)
 
-        ;; Macro performance optimization
-        :lazyredraw true}]
-         
- (each [key value (pairs options)]
-  (tset vim.opt key value)))
+;; Editor Options
+(set! nowrap)
+(set! scrolloff 10)
+(set! fileencoding :utf-8)
+(set! termguicolors)
+(set! showmatch)
+(set! noshowmode)
+(set! relativenumber)
+(set! number)
+(set! splitright)
+(set! splitbelow)
+
+;; Macro Performance Optimization
+(set! lazyredraw)

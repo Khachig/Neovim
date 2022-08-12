@@ -4,7 +4,7 @@
       (vim.notify (or ?err (.. name " not found")) "error")
       (do
        (pack.setup (or ?options {}))
-       (. [pack] 1)))))
+       pack))))
 
 (fn safe-require [name]
   (let [(status-ok? pack) (pcall require name)]

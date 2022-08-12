@@ -1,5 +1,5 @@
 (let [{: safe-require} (require :utils)
-      stdpath (vim.api.nvim_eval "stdpath('config')")
+      stdpath (vim.fn.stdpath :config)
       cores (io.popen (.. "ls -A " stdpath "/lua/core"))
       configs (io.popen (.. "ls -A " stdpath "/lua/configs"))]
   (each [core (cores:lines)]
