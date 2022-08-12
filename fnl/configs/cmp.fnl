@@ -62,7 +62,8 @@
    :sources (cmp.config.sources
              [{:name "nvim_lsp"}
               {:name "luasnip"}
-              {:name "conjure"}]
+              {:name "conjure"}
+              {:name "path"}]
              [{:name "buffer"}])
    :formatting {:fields [:kind :abbr :menu]
                 :format (fn [entry vim-item]
