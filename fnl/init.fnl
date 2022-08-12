@@ -1,28 +1,7 @@
-(require "core.autocommands")
-(require "core.options")
-(require "core.plugins")
-
-(each [_ source (ipairs
-                 [
-                  :configs.autopairs
-                  :configs.bufferline
-                  :configs.cmp
-                  :configs.colorscheme
-                  :configs.keymaps
-                  :configs.lightspeed
-                  :configs.lsp
-                  :configs.lsp-installer
-                  :configs.lualine
-                  :configs.luasnip
-                  :configs.neo-tree
-                  :configs.notify
-                  :configs.telescope
-                  :configs.toggleterm
-                  :configs.treesitter
-                  :configs.user-commands
-                  :configs.web-devicons
-                  :configs.window-picker])]
- (let [(status-ok? err-msg) (pcall require source)]
-  (if (not status-ok?)
-   (error (.. "Failed to load " source "\n\n" err-msg)))))
-  
+(let [{: safe-require} (require :utils)
+      cores (io.popen "ls -A lua/core")
+      configs (io.popen "ls -A lua/configs")]
+  (each [core (cores:lines)]
+    (safe-require (.. "core/" (string.sub core 1 -5))))
+  (each [config (configs:lines)]
+    (safe-require (.. "configs/" (string.sub config 1 -5)))))
