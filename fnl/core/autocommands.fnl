@@ -17,8 +17,8 @@
          ["VimLeave" "*" "silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'"]
 
          ;; Reload Neovim depending on config file saves
-         ["BufWritePost" "plugins.fnl" "make | source lua/core/plugins.lua | PackerSync"]
-         ["BufWritePost" "autocommands.fnl,options.fnl,fnl/configs/*.fnl" "make | source init.lua"]]]
+         ["BufWritePost" "plugins.fnl" "cd ~/.nvim | make | source lua/core/plugins.lua | PackerSync | cd -"]
+         ["BufWritePost" "autocommands.fnl,options.fnl,fnl/configs/*.fnl" "cd ~/.nvim | make | source init.lua | cd -"]]]
   (each [_ cmd (ipairs autocmds)]
     (autocommand (unpack cmd))))
 (cmd "augroup END")
