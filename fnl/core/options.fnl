@@ -1,4 +1,4 @@
-(import-macros {: set!} :macros)
+(import-macros {: set! : setg!} :macros)
 
 (set! noswapfile)
 (set! showcmd)
@@ -32,3 +32,6 @@
 
 ;; Macro Performance Optimization
 (set! lazyredraw)
+
+;; Miscellaneous Settings
+(setg! vimwiki_list [{:path "~/Brain-2.0" :syntax "markdown" :ext ".md"}])

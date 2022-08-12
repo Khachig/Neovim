@@ -29,11 +29,9 @@
           {:config (fn [] (require :configs.cmp))})
 
         (use "hrsh7th/cmp-buffer")
-
+        (use "hrsh7th/cmp-path")
         (use "hrsh7th/cmp-nvim-lsp")
-
         (use "saadparwaiz1/cmp_luasnip")
-
         (use "rafamadriz/friendly-snippets")
 
         (use "L3MON4D3/LuaSnip"
@@ -43,6 +41,9 @@
         (use "rcarriga/nvim-notify"
           {:event "VimEnter"
            :config (fn [] (require :configs.notify))})
+
+        ;; VimWiki
+        (use "vimwiki/vimwiki.git")
 
         ;; Bufferline
         (use "akinsho/bufferline.nvim"
