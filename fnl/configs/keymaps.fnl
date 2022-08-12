@@ -52,7 +52,7 @@
       :p [":vs<CR>:vertical resize 50<CR>:term<CR>aipython<CR><C-\\><C-n><C-w>h" "Python"]}
     :<leader>
      {
-      :w [":w<CR>" "Quick Save"]
+      :s [":w<CR>" "Quick Save"]
       :q [":q<CR>" "Quick Quit"]
       :Q [":q!<CR>" "Force quit"]
 
@@ -84,7 +84,7 @@
           :a {:name "Perform code action"}
           :r {:name "Show references"}
           :c [":!ctags -R ." "Run ctags"]}
-      :s {
+      :S {
           :name "+Search"
           :F [":Telescope file_browser<CR>" "File Browser"]
           :f [":Telescope find_files<CR>" "Find File"]
