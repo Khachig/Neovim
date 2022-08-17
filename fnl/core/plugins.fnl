@@ -43,7 +43,14 @@
            :config (fn [] (require :configs.notify))})
 
         ;; VimWiki
-        (use "vimwiki/vimwiki.git")
+        (use "vimwiki/vimwiki")
+
+        ;; Enhancements for prose writing
+        (use "preservim/vim-pencil")
+
+        ;; Distraction free writing
+        (use "Pocco81/true-zen.nvim"
+          {:config (fn [] (require :configs.true-zen))})
 
         ;; Bufferline
         (use "akinsho/bufferline.nvim"
@@ -112,7 +119,4 @@
         ;; Status line
         (use "nvim-lualine/lualine.nvim"
           {:requires ["kyazdani42/nvim-web-devicons" :opt true]
-           :config (fn [] (require :configs.lualine))})
-
-        ;; Plugin to interface with Sonic-pi
-        (use "lilyinstarlight/vim-sonic-pi")))))
+           :config (fn [] (require :configs.lualine))})))))

@@ -32,6 +32,9 @@
        ["<S-h>" ":bprevious<CR>"]
        ["<S-l>" ":bnext<CR>"]
 
+       ;; Insert wiki link
+       ["<C-k>" "[[]]<ESC>hi" "i"]
+
        ;; Toggleterm
        ["<leader>tv" ":ToggleTermSendVisualSelection<CR>" "v"]
        ["<leader>tV" ":ToggleTermSendVisualLines<CR>" "v"]
