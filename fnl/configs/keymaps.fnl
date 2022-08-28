@@ -8,7 +8,7 @@
         (tset all-opts k v))
       (keymap (or t "n") key val all-opts))))
 
-(set vim.g.mapleader ",")
+(set vim.g.mapleader " ")
 (let [keymaps
       [
        ;; Remap 0 to first non-whitespace character
@@ -17,10 +17,6 @@
        ;; Move cursor through display lines instead of only actual lines
        ["j" "gj"]
        ["k" "gk"]
-
-       ;; Search
-       ["<Space>" "/"]
-       ["<C-Space>" "?"]
 
        ;; Quick switch window
        ["<C-h>" "<C-w>h"]
@@ -33,11 +29,17 @@
        ["<S-l>" ":bnext<CR>"]
 
        ;; Insert wiki link
-       ["<C-k>" "[[]]<ESC>hi" "i"]
+       ["<C-k>" "[[]]<ESC>hi" :i]
+
+       ;; Delete word
+       ; Backward
+       ["<C-Backspace>" "<ESC>dbxa" :i]
+       ; Forward
+       ["<C-DEL>" "<ESC>ldwi" :i]
 
        ;; Toggleterm
-       ["<leader>tv" ":ToggleTermSendVisualSelection<CR>" "v"]
-       ["<leader>tV" ":ToggleTermSendVisualLines<CR>" "v"]
+       ["<leader>tv" ":ToggleTermSendVisualSelection<CR>" :v]
+       ["<leader>tV" ":ToggleTermSendVisualLines<CR>" :v]
 
        ;; Resize with arrow keys
        ["<C-Up>" ":resize -2<CR>"]
