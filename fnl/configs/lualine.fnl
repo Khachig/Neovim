@@ -1,4 +1,4 @@
-(import-macros {: vmode?} :macros)
+(import-macros {: vmode?} :fnl.macros)
 
 (macro is-filetype? [...]
   (icollect [_ value# (ipairs [...]) :into '(or)] `(= vim.bo.filetype ,value#)))
@@ -21,4 +21,6 @@
     ""))
 
 (let [{: create-conf} (require :utils)]
-  (create-conf :lualine {:sections {:lualine_x ["encoding" "fileformat" get-wordcount "filetype"]}}))
+  (create-conf :lualine {:options {:component_separators {:left "" :right ""}
+                                   :section_separators {:left "" :right ""}}
+                         :sections {:lualine_x ["encoding" "fileformat" get-wordcount "filetype"]}}))
