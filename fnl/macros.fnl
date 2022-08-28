@@ -20,12 +20,13 @@
     `(tset vim.g ,name ,value)))
 
 (fn au! [group-name ...]
-  `(let [commands# [,...]
-         gn# (.. "augroup " ,group-name)]
-      (vim.api.nvim_command gn#)
-      (vim.api.nvim_command "autocmd!")
-      (for [i# 1 (length commands#)]
-        (vim.api.nvim_command (.. "autocmd " (. commands# i#))))
-      (vim.api.nvim_command "augroup END")))
+  (let [gr-name (.. "augroup " group-name)]
+    `(do 
+       (vim.api.nvim_command ,gr-name)
+       (vim.api.nvim_command "autocmd!")
+       ,(icollect [_ cmd# (ipairs [...]) :into '(do)]
+          (let [autocmd# (.. "autocmd " cmd#)]
+            `(vim.api.nvim_command ,autocmd#)))
+        (vim.api.nvim_command "augroup END"))))
 
 {: set! : setg! : au! : nvim-mode! : vmode? : nmode? : imode?}
