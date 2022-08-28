@@ -1,4 +1,4 @@
-(import-macros {: set! : setg!} :macros)
+(import-macros {: set! : setg!} :fnl.macros)
 
 (set! noswapfile)
 (set! showcmd)
