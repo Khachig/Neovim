@@ -28,9 +28,6 @@
        ["<S-h>" ":bprevious<CR>"]
        ["<S-l>" ":bnext<CR>"]
 
-       ;; Insert wiki link
-       ["<C-k>" "[[]]<ESC>hi" :i]
-
        ;; Delete word
        ; Backward
        ["<C-Backspace>" "<ESC>dbxa" :i]
@@ -60,6 +57,8 @@
       :s [":w<CR>" "Quick Save"]
       :q [":q<CR>" "Quick Quit"]
       :Q [":q!<CR>" "Force quit"]
+
+      :r [":cd ~/.nvim<CR>:make<CR>:PackerSync<CR>:PackerCompile<CR>:luafile init.lua<CR>cd -<CR>" "Refresh"]
 
       :W [":Writer<CR>" "Toggle Writer Mode"]
 
