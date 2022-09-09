@@ -42,11 +42,13 @@
                        (let [luasnip (require :luasnip)]
                          (luasnip.lsp_expand args.body)))}
    :mapping {:<C-e> (cmp.mapping.abort)
-             :<CR> (cmp.mapping.confirm {:select true})
+             :<CR> (cmp.mapping.confirm {:select false})
              :<Tab> (cmp.mapping
                       (fn [fallback]
                         (if (cmp.visible)
                             (cmp.select_next_item)
+                            (luasnip.expandable)
+                            (luasnip.expand)
                             (luasnip.expand_or_jumpable)
                             (luasnip.expand_or_jump)
                             (has_words_before)
