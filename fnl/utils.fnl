@@ -1,4 +1,6 @@
-(fn create-conf [name ?options ?err]
+(module fnl.utils)
+
+(defn create-conf [name ?options ?err]
   (let [(status-ok? pack) (pcall require name)]
     (if (not status-ok?)
       (vim.notify (or ?err (.. name " not found")) "error")
@@ -6,10 +8,8 @@
        (pack.setup (or ?options {}))
        pack))))
 
-(fn safe-require [name]
+(defn safe-require [name]
   (let [(status-ok? pack) (pcall require name)]
     (if (not status-ok?)
       (vim.notify (.. name " not found") "error")
       pack)))
-        
-{: create-conf : safe-require}

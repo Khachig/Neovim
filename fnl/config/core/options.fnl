@@ -1,4 +1,4 @@
-(import-macros {: set! : setg!} :fnl.macros)
+(import-macros {: cmd : set! : setg!} :macros)
 
 (set! noswapfile)
 (set! showcmd)
@@ -29,6 +29,9 @@
 (set! number)
 (set! splitright)
 (set! splitbelow)
+
+;; Colorscheme ✨
+(cmd colorscheme everforest)
 
 ;; Macro Performance Optimization
 (set! lazyredraw)

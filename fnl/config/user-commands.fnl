@@ -1,4 +1,4 @@
-(import-macros {: set! : vmode?} :fnl.macros)
+(import-macros {: set! : vmode?} :macros)
 
 (macro is-filetype? [...]
   (icollect [_ value# (ipairs [...]) :into '(or)] `(= vim.bo.filetype ,value#)))
@@ -14,7 +14,6 @@
       (do
         (set! background "dark")
         (vim.cmd "PencilOff")))))
-    ;(vim.cmd "PencilToggle")))
 
 (each [command function (pairs Commands)]
   (vim.api.nvim_create_user_command command function {}))
