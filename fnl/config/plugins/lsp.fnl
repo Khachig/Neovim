@@ -33,10 +33,10 @@
            ;:workspace {:library (vim.api.nvim_get_runtime_file "" true)}
            ;:telemetry {:enable false}}}}))
     ;((. (. lspconfig server) :setup) opts)))
-  (lspconfig.clangd.setup {:on_attach on-attach :flags lsp-flags}))
-  ;(lspconfig.pylsp.setup {:on_attach on-attach :flags lsp-flags}))
-  ;(lspconfig.pyright.setup {:on_attach on-attach :flags lsp-flags})
-  ;(lspconfig.tsserver.setup {:on_attach on-attach :flags lsp-flags}))
+  (lspconfig.clangd.setup {:on_attach on-attach :flags lsp-flags})
+  (lspconfig.pylsp.setup {:on_attach on-attach :flags lsp-flags})
+  (lspconfig.pyright.setup {:on_attach on-attach :flags lsp-flags})
+  (lspconfig.tsserver.setup {:on_attach on-attach :flags lsp-flags}))
   ;(lspconfig.jedi_language_server.setup {:on_attach on-attach :flags lsp-flags})
   ;(lspconfig.sumneko_lua.setup
     ;{:on_attach on-attach

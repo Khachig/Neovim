@@ -1,4 +1,4 @@
-(import-macros {: vmode?} :fnl.macros)
+(import-macros {: vmode?} :macros)
 
 (macro is-filetype? [...]
   (icollect [_ value# (ipairs [...]) :into '(or)] `(= vim.bo.filetype ,value#)))

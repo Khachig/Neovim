@@ -1,4 +1,4 @@
-(import-macros {: au!} :fnl.macros)
+(import-macros {: au!} :macros)
 
 (au! "MyAutocmds"
      ;; Disable autocomment on newline
@@ -7,4 +7,3 @@
      ;; Toggle remap caps lock to escape on Nvim enter/exit for better ergonomics
      "VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
      "VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'")
-
