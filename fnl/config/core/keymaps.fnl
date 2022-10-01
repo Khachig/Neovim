@@ -47,11 +47,15 @@
 ;; Delete current buffer
 (map "<leader>bd" ":Bdelete<CR>")
 
-;; Delete word
-; Backward
+;; Keymaps for better prose writing experience
+; Delete word backward
 (map "<C-Backspace>" "<ESC>dbxa" :i)
-; Forward
+; Delete word forward
 (map "<C-DEL>" "<ESC>ldwi" :i)
+; Follow file link
+(map "<C-CR>" "gf")
+; Follow url link
+(map "<S-CR>" "gx")
 
 ;; Toggleterm
 (map "<leader>tv" ":ToggleTermSendVisualSelection<CR>" :v)
@@ -66,6 +70,9 @@
 ;; Neotree
 (map "<leader>n" ":Neotree toggle<CR>")
 (map "<leader>o" ":Neotree focus<CR>")
+
+;; Neogit
+(map "<leader>G" ":Neogit<CR>")
 
 ;; Telescope
 (map "<leader>SF" ":Telescope file_browser<CR>")
