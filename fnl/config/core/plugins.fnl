@@ -43,9 +43,6 @@
         {:event "VimEnter"
          :config (fn [] (require :configs.notify))})
 
-      ;; VimWiki
-      (use "vimwiki/vimwiki")
-
       ;; Enhancements for prose writing
       (use "preservim/vim-pencil")
 
@@ -104,6 +101,10 @@
         {:tag "v2.*"
          :config (fn [] (require :configs.toggleterm))})
 
+      ;; Magit for Neovim
+      (use "TimUntersberger/neogit"
+        {:config (fn [] (require :configs.neogit))})
+
       ;; Nvim Telescope (fuzzy finder)
       (use "nvim-telescope/telescope.nvim"
         {:cmd "Telescope"
@@ -116,7 +117,7 @@
 
       ;; Keybinding hints
       (use "folke/which-key.nvim")
-      
+
       ;; Status line
       (use "nvim-lualine/lualine.nvim"
         {:requires ["kyazdani42/nvim-web-devicons" :opt true]
